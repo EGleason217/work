@@ -1,0 +1,9 @@
+body {
+    background-image: url(../static/imgs/DJI_0035.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#form {
+    background-color: aliceblue;
+}
