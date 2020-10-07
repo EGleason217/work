@@ -7,3 +7,7 @@ body {
 #form {
     background-color: aliceblue;
 }
+
+.block1{
+    border: solid black 4px;
+}

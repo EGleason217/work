@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Document</title></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <title>Document</title>
+</head>
+
 <body>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-2">
-          </div>
-          <div class="col-sm-8" id="searchtable">
-            <h1>Input Case Information Below:</h1>
-            <table case="table table-striped">
-                <form action="" method="post">
-                    <h3>Case Number:</h3>
-                    <input type="text" name="caseId" id="caseId"><br>
-                    <label for="incidents">Incidents</label>
-                    <input type="checkbox" name="incidents" id="incidents">
-                    <label for="accident">Accidents</label>
-                    <input type="checkbox" name="accident" id="accident">
-                    <label for="incidents">Citation</label>
-                    <input type="checkbox" name="citation" id="citation">
-                    <h3>Date of Report:</h3>
-                    <input type="date" name="date" id="date">
-                    <h3>Who?</h3>
-                    <input type="text" name="" id="">
-                </form>
-            </table>
-          </div>
-          <div class="col-sm-2">
-          </div>
-        </div>
+  <div class="container">
+    <a href="/logout" class="btn btn-danger">Logout</a>
+    <div class="row">
+      <div class="col-sm-2">
       </div>
+      <div class="col-sm-8" id="searchtable">
+        <h1>Input Case Information Below:</h1>
+        <table case="table table-striped">
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="block1">
+              <h3>Case Number:</h3>
+              <input type="text" name="caseId" id="caseId" placeholder="2020-123456"><br>
+              <label for="incidents">Incidents</label>
+              <input type="checkbox" name="caseType" id="incidents">
+              <label for="accident">Accidents</label>
+              <input type="checkbox" name="caseType" id="accident">
+              <label for="incidents">Citation</label>
+              <input type="checkbox" name="caseType" id="citation">
+            </div>
+            <div class="block1">
+              <h3>Date of Report:</h3>
+              <input type="date" name="date" id="date">
+            </div>
+            <div class="block1">
+              <h3>Who?</h3>
+              <label for="lname">Last Name / Business Name</label>
+              <input type="text" name="lname" id="lname" placeholder="Last Name/Business Name"><br>
+              <label for="fname">First Name</label>
+              <input type="text" name="fname" id="fname" placeholder="First Name"><br>
+            </div>
+            <div class="block1">
+              <label for="streetNum">Street #</label>
+              <input type="number" name="streetNum" id="streetNum">
+              <label for="streetNam">Street Name</label>
+              <input type="text" name="streetNam" id="streetNam" placeholder="i.e. 183, 199, 215, 175"><br>
+              <label for="city">Miami Gardens</label>
+              <input type="checkbox" name="city" id="city" checked>
+            </div>
+            <input type="submit" value="Search" class="btn btn-success">
+          </form>
+        </table>
+      </div>
+      <div class="col-sm-2">
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

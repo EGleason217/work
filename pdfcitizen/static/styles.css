@@ -35,7 +35,7 @@ button input btn-success{
 } 
 
 #searchtable{
-    width: 70%;
+    width: 80%;
     background-color: aliceblue;
     height: fit-content;
 }
@@ -47,4 +47,18 @@ button input btn-success{
 #searchtable label{
     margin-left: 7px;
     margin-right: 7px;
+}
+
+
+.block1{
+    border: solid black 4px;
+    padding: 5px;
+}
+
+.btn-danger{
+    margin-left: 90%;
+}
+
+#lname, #fname{
+    width: 235px;
 }

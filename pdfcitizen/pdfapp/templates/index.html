@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <title>Document</title>
+    <script type="text/javascript" src='/static/js/app.js'></script>
 </head>
+
 <body>
     <div class="container-md login">
-        <form action="/login" method="post">
+        <form action="/login" method="post" id="loginForm">
             {% csrf_token %}
             <h2>Login Here:</h2>
             <h4>Username:</h4>
-            <input type="text" name="email" id="usernameInput" placeholder="Email Address">
+            <input type="text" name="email" id="usernameInput" placeholder="Email Address"
+                onkeydown="ValidateEmail()"><br>
+            <span id="text"></span>
             <h4>Password:</h4>
-            <input type="password" name="password" id="passwordInput" placeholder="Password"><br>
+            <input type="password" name="password" class="passwordInput" placeholder="Password"><br>
             <input type="submit" value="Submit" class="btn btn-success">
         </form>
         <h4><a href="/register">Register</a></h4>
     </div>
 </body>
+
 </html>
